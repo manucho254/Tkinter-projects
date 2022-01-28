@@ -2,7 +2,7 @@ from turtle import width
 from main import *
 from tkinter import Tk, font
 from tkinter.messagebox import showerror, showinfo
-# from functions import main_page
+from functions import main_page,  remove
 
 class UserAuth(ttk.Frame):
     def __init__(self, master):
@@ -12,15 +12,6 @@ class UserAuth(ttk.Frame):
         self.master.title("Password Manager")
         self.master.geometry("800x600+200+50")
         self.master.resizable(width=0, height=0)
-        
-        
-        def remove():
-            master.withdraw()
-            master.after(500, master.destroy())
-        
-        def main_page():
-            window = Toplevel()
-            window.geometry("800x600+200+50")
             
         self.master.main_label = ttk.Label(self.master, text="Password Manager", bootstyle=DARK, font="Sylfaen, 40")
         self.master.main_label.place(x=170, y=40)
@@ -34,7 +25,7 @@ class UserAuth(ttk.Frame):
         self.label_username.place(x=30,  y=110)
         self.entry_password = ttk.Entry(self.label_frame , width=50, bootstyle=DARK, font="Sylfaen, 10")
         self.entry_password.place(x=100,  y=110)
-        self.login_button = ttk.Button(self.label_frame, text='Login', bootstyle=DARK, width=40, command=lambda:[main_page()])
+        self.login_button = ttk.Button(self.label_frame, text='Login', bootstyle=DARK, width=40, command=lambda:[main_page(master),  remove(master)])
         self.login_button.place(x=120,  y=200)
         
         
