@@ -2,7 +2,7 @@ from turtle import width
 from main import *
 from tkinter import Tk, font
 from tkinter.messagebox import showerror, showinfo
-from functions import main_page,  remove
+from functions import main_page, withdraw_and_create_window
 
 class UserAuth(ttk.Frame):
     def __init__(self, master):
@@ -25,7 +25,7 @@ class UserAuth(ttk.Frame):
         self.label_username.place(x=30,  y=110)
         self.entry_password = ttk.Entry(self.label_frame , width=50, bootstyle=DARK, font="Sylfaen, 10")
         self.entry_password.place(x=100,  y=110)
-        self.login_button = ttk.Button(self.label_frame, text='Login', bootstyle=DARK, width=40, command=lambda:[main_page(master),  remove(master)])
+        self.login_button = ttk.Button(self.label_frame, text='Login', bootstyle=DARK, width=40, command=lambda:[withdraw_and_create_window(master)])
         self.login_button.place(x=120,  y=200)
         
         
